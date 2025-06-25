@@ -516,37 +516,91 @@ layout: top-title
 color: amber-light
 ---
 ::title::
-# New Reduction
+# New Reduction (Sketch)
 ::content::
 
-- The loss of $2$-factor in $\alpha$ is due to decoding tensor codes
+- The loss of $2$-factor in $\alpha$ is due to decoding algo for tensor codes
 - key idea: avoid tensor code using **expander-walk lifting**
+
+<div style="display: flex; justify-content: center; align-items: center;" v-click>
+
+![Code](./images/expander_walk_reduction.svg)
+
+</div>
 
 ---
 layout: top-title
 color: amber-light
 ---
 ::title::
-# Worst-Case to Average-Case Reduction
+# Expander-Walk Code
 ::content::
 
-- Issue: even if $A,B\sim\F^{n\times n}$, their encodings $LA,BL^\top$ are **not** uniform
+<div class="definition">
 
-- **Idea**: divide $LA, BL^\top$ into small blocks such that each block is uniform
-  - technical part: way to compute such division
+Let $G=(V,E)$ be a $d$-regular **expander** graph and 
+$W\subseteq V^\ell$ be the set of all walks of length $\ell-1$ on $G$ (specifically, $W \subseteq V^\ell$).
+**Expander-walk code** is the code defined by the following encoding function $\Enc\colon \F^V\to\F^W$:
 
-<div style="display: flex; justify-content: center; align-items: center;">
-
-![Code](./images/square.svg)
+$$
+  \Enc(x) = \rbra{ x(v_0)+x(v_1)+\dots+x(v_{\ell-1}) }_{(v_0,v_1,\dots,v_{\ell-1})\in W }
+$$
 
 </div>
 
+<div style="display: flex; justify-content: center; align-items: center;">
+
+![Expander-walk code](./images/expanderwalk.svg)
+
+</div>
 
 <figcaption style="text-align: center; font-size: 0.8em; color: #666;">
 
-We divide $LA,BL^\top$ such that the marginal distribution of each $A_i,B_j$ is uniform.
+Sum the values of vertices traversed by a walk of length $2$
 
 </figcaption>
+
+- $\widetilde{O}(\abs{W})$-time approximate list-decoding algorithms <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, Srivastava, Tulsiani, STOC'21\]</a>, <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, RANDOM'23\]</a>
+
+---
+layout: top-title
+color: amber-light
+---
+::title::
+# Lifting
+::content::
+
+<div style="display: flex; justify-content: center; align-items: center;">
+
+![lifting](./images/expander_construction.svg)
+
+</div>
+
+<figcaption style="text-align: center; font-size: 0.8em; color: #666;">
+
+Matrix $A'$ becomes an $\abs{W}\times kn$ matrix. The $\mathbf{i}=(i_1,\dots,i_k)$-th row contains the $i_1$-th row vector, $i_2$-th row vector, ... of $A$.
+$B'$ is constructed by applying the same operation to $B$ with rows and columns interchanged.
+
+</figcaption>
+
+---
+layout: top-title
+color: amber-light
+---
+::title::
+# Product of Lifting
+::content::
+
+<div style="display: flex; justify-content: center; align-items: center;">
+
+![Matrix construction](./images/lifting.svg)
+
+</div>
+
+- The $(\mathbf{i},\mathbf{j})$-th entry of $A'\cdot B'$ equals $(AB)_{i_1,j_1} + \dots + (AB)_{i_k,j_k}$ -> "XOR" of $k$ entries of $AB$
+- Sum along the walk $(i_1,j_1)\to \dots \to (i_k,j_k)$ on the tensor product $G^2$.
+- That is, $AB$ can be viewed as encoded by the expander-walk code on $G^2$.
+
 
 
 ---
