@@ -191,7 +191,7 @@ if the current improvement rate of 0.0046 / 35 years continues
 
 <figure>
 
-![computational complexity of matrix multiplication](./images/plot.png)
+![computational complexity of matrix mult](./images/plot.png)
 
 </figure>
 
@@ -224,9 +224,9 @@ Given two **random** matrices $A,B\sim\F^{n\times n}$ as input, compute any matr
 
 <v-clicks>
 
-- $\alpha = 1$: the usual (average-case) matrix multiplication
+- $\alpha = 1$: the usual (average-case) matrix mult
 
-- $\alpha = \frac{1}{\abs{\F}}$ is easy (random matrix)
+- $\alpha = \frac{1}{\abs{\F}}$ and $\alpha=\frac{1}{n}$ are easy (random matrix or compute $n$ entries)
 
 - An algorithm is non-trivial if $\alpha \ge \frac{1}{\abs{\F}} + \textcolor{c2185b}{\varepsilon}$ (better than random guess)
 
@@ -243,12 +243,12 @@ color: amber-light
 
 ::content::
 
-- AI rely on large-scale matrix multiplication on GPU
+- AI rely on large-scale matrix mult on GPU
   - According to [International Energy Agency](https://www.iea.org/reports/electricity-2024/executive-summary), in 2026, **electricity consumption** from data centres, AI and the cryptocurrency could be the same as the total electricity consumption of Japan.
 
 <v-click>
 
-- Matrix multiplication algorithms using **physical devices** (aiming at low energy consumption)
+- Implementation of matrix mult algorithms using **physical devices**
   - Water flow <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ITCS.2024.96" class="cite-reference">\[Valinat, ITCS'24\]</a>, thermodynamic systems <a href="https://openreview.net/forum?id=6flkWTzK2H" class="cite-reference">\[Coles et al, NeurIPS'23 (workshop)\]</a>, optical devices <a href = "https://www.nature.com/articles/s41377-022-00717-8" class="cite-reference">\[Zhou et al, Light: Science & Applications'22\]</a>
   - [post](https://www.quantamagazine.org/ai-needs-enormous-computing-power-could-light-based-chips-help-20240520/) by Quanta Magazine
 
@@ -257,12 +257,12 @@ color: amber-light
 <v-clicks>
 
 - These algorithms may have **errors** due to white noise in physical systems
-  - Physical devices solve **approximate** matrix multiplication
+  - Physical devices solve **approximate** matrix mult
 
 
 <div class="topic-box">
 
-We show how to **correct** the errors in average-case approximate matrix multiplication algorithms.
+We show how to **correct** the errors in average-case approximate matrix mult algorithms.
 
 </div>
 
@@ -363,7 +363,6 @@ then there exists an $2^{2^{\poly(\abs{\F}/\varepsilon)}}\cdot T(n)\cdot \polylo
   - conditional (under the hardness of **Learning with Error**)
   - much better overhead: **$\polylog(\abs{\F}/\varepsilon)$**
 
-- Nonuniform reduction <a class="cite-reference" href="https://dl.acm.org/doi/10.1145/3717823.3718244">\[Hirahara, S., STOC'25\]</a> has overhead **$\abs{\F}\cdot\log(1/\varepsilon)\cdot\log n$**
 </v-clicks>
 
 
@@ -398,7 +397,7 @@ $M$: worst-case approximation algorithm such that $\agr(M(A,B),AB)\ge\alpha$ for
 
 <div class="topic-box">
 
-Key point: Design encoding/decoding using **list-decodable codes**.
+Construct $A'$ and $B'$ such that $A'\cdot B'$ is the encoding of $AB$.
 
 </div>
 
@@ -460,10 +459,11 @@ A code $\calC\subseteq\F^N$ is **$(\rho,L)$-list-decodable** if $\abs{\calC \cap
 
 <v-click>
 
-In this work, we need the following:
+<div class = "topic-box">
 
-1. rate is $\Omega(1)$
-2. $(1-\alpha/2,L)$-list-decodable for $L=\widetilde{O}(1)$ using an $\widetilde{O}(N)$-time algorithm.
+What we need: **$\widetilde{O}(N)$-time list-decodable code**
+
+</div>
 
 </v-click>
 
@@ -472,7 +472,7 @@ layout: top-title
 color: amber-light
 ---
 ::title::
-# Tensor Code
+# Previous Technique \[Hirahara, S., STOC'25\]
 ::content::
 
 <div class="definition">
@@ -498,7 +498,7 @@ layout: top-title
 color: amber-light
 ---
 ::title::
-# Uniform Reduction
+# Previous Technique \[Hirahara, S., STOC'25\]
 ::content::
 
 <div style="display: flex; justify-content: center; align-items: center;">
@@ -507,32 +507,20 @@ color: amber-light
 
 </div>
 
-<figcaption style="text-align: center; font-size: 0.8em; color: #666;">
+- Product = Tensor encoding of $AB$
+- We can identify $AB$ from the list by **Freivalds' randomized verification**
 
-We can identify $AB$ from the list by checking the Freivalds' randomized algorithm.
-
-</figcaption>
 
 ---
 layout: top-title
 color: amber-light
 ---
 ::title::
-# Uniform Reduction
+# New Reduction
 ::content::
 
-- If $\abs{\F}=\Omega(n)$, we use the Reed-Solomon code
-  - nearly linear time list-decoding algorithm <a href="https://ieeexplore.ieee.org/document/1459042" class="cite-reference">\[Alekhnovich, IEEE Trans. Inf. Theory'05\]</a>
-- If $\F$ is small, we use an expander-based code <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, Srivastava, Tulsiani, STOC'21\]</a>, <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, RANDOM'23\]</a>
-  - rate $\Omega(1)$, list size $O(1)$, and list-decodable within radius $1-\frac{1}{\abs{\F}}-\varepsilon$ in $\widetilde{O}(N)$ time
-  - $\Omega(1)$-rate code + direct sum over expander walk or HDX
-  - hidden constant factor is $2^{2^{\poly(\abs{F}/\varepsilon)}}$ due to regularity lemma of list-decoding algorithm
-
-<div class="topic-box">
-
-This reduction is **exact-to-approximate** but **worst-case to worst-case**.
-
-</div>
+- The loss of $2$-factor in $\alpha$ is due to decoding tensor codes
+- key idea: avoid tensor code using **expander-walk lifting**
 
 ---
 layout: top-title
@@ -571,15 +559,43 @@ color: amber-light
 
 <div class="topic-box">
 
-If we can solve **approximate** matrix multiplication **on average**, then we can solve **exact** matrix multiplication for **any input** in almost the same time.
+Optimal **worst-case-to-average-case** and **exact-to-approximate** reduction for matrix mult.
 
 </div>
 
-- **Technique**: encoding using **list-decodable code on expanders**
-  - list-decoding algorithm by <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, RANDOM'23\]</a>
+<div class="grid grid-cols-2 gap-4">
 
-- Open Questions
-  - Can we do something similar for matrix multiplication over the **real numbers**?
-    - suitable for practical situation
-  - Reduce the hidden constant **$2^{2^{\poly(p/\varepsilon)}}$** when the field is small (without any assumption)
-    - How about $\log\log(n) \ll \abs{\F} \ll n$?
+<div>
+
+- Open Question
+  - Reduce the hidden constant **$2^{2^{\poly(p/\varepsilon)}}$**?
+  - matrix over **$\Real$** or **$\mathbb{Q}$**?
+    - how to formalize? (ideas welcome!!!)
+
+- Our future plan
+  1. Deal with real numbers
+  2. Implement (perhaps using physical devices)
+  <v-click>3. Sell it to NVIDIA or OpenAI </v-click>
+
+</div>
+
+<div v-click="1" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+
+<img src="./images/money_okanemochi.png" alt="okanemochi" style="width: 60%; height: 60%" />
+
+<div style="display: flex; justify-content: center; align-items: center;" v-click="2">
+<QRCode value="https://nobutakashimizu.github.io/stoc25_slide/" :size="70" render-as="svg"/>
+</div>
+
+<div v-click="2">
+
+Thank you!
+
+</div>
+
+</div>
+
+
+
+
+</div>
