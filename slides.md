@@ -58,6 +58,45 @@ joint work with Shuichi Hirahara (National Institute of Informatics)
 layout: top-title
 color: amber-light
 ---
+::title::
+# Question
+::content::
+
+<div class="question">
+
+What does this plot represent?
+
+</div>
+
+
+<div style="width: 55%; margin: 0 auto;">
+```mermaid
+---
+config:
+    themeVariables:
+        xyChart:
+            plotColorPalette: "#0000FF"
+---
+xychart-beta
+    x-axis [1968, 1968, 1978, 1979, 1981, 1981, 1981, 1986, 1990, 2010, 2012, 2014, 2020, 2022, 2024, 2025]
+    y-axis 2 --> 3
+    line [3, 2.807, 2.795, 2.779, 2.522, 2.517, 2.496, 2.479, 2.3755, 2.3737, 2.3729, 2.3728639, 2.3728596, 2.371866, 2.371552, 2.371339]
+```
+</div>
+
+<style>
+th {
+  background-color: #f0f0f0;
+}
+</style>
+
+
+
+
+---
+layout: top-title
+color: amber-light
+---
 
 ::title::
 
@@ -67,11 +106,9 @@ color: amber-light
 
 <div class="topic-box">
 
-Given two matrices $A, B \in \F^{n\times n}$, compute their product $AB$ (over a finite field $\F$).
+Improvements of exponents in fast square matrix multiplication algorithms
 
 </div>
-
-<v-click>
 
 <div style="display: flex; gap: 1em; font-size: 0.7em; border: 1px solid #ccc; padding: 0.5em; border-radius: 5px;">
 <div>
@@ -115,8 +152,6 @@ th {
 }
 </style>
 
-</v-click>
-
 ---
 layout: top-title
 color: amber-light
@@ -133,8 +168,6 @@ color: amber-light
 When can we get an $O(n^2)$-time algorithm?🧐
 
 </div>
-
-<v-click>
 
 <div style="width: 55%; margin: 0 auto;">
 ```mermaid
@@ -157,7 +190,7 @@ th {
 }
 </style>
 
-</v-click>
+
 
 ---
 layout: top-title
@@ -178,9 +211,9 @@ color: amber-light
 
 <div style="text-align: center;">
 
-We need to wait **3122 years**
+I'm regret to inform you that **3122 years** needed...
 
-if the current improvement rate of 0.0046 / 35 years continues
+(if the current improvement rate of 0.0046 / 35 years continues)
 
 </div>
 
@@ -194,7 +227,7 @@ if the current improvement rate of 0.0046 / 35 years continues
 
 <figcaption style="text-align: center; font-size: 0.6em; color: #666;">
 
-Use coldsleep!
+Need coldsleep!
 
 </figcaption>
 
@@ -246,6 +279,8 @@ Given two **random** matrices $A,B\sim\F^{n\times n}$ as input, compute any matr
 
 - $\alpha = \frac{1}{\abs{\F}}$ and $\alpha=\frac{1}{n}$ are easy (random matrix or compute $n$ entries)
 
+- This paper: small $\abs{\F}$ (indeed constant size field)
+
 - An algorithm is non-trivial if $\alpha \ge \frac{1}{\abs{\F}} + \textcolor{c2185b}{\varepsilon}$ (better than random guess)
 
 </v-clicks>
@@ -280,7 +315,7 @@ color: amber-light
 
 <div class="topic-box">
 
-We show how to **correct** the errors in average-case approximate matrix mult algorithms.
+In this paper, we are pleased to inform you that error-correction is **possible**!😄
 
 </div>
 
