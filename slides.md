@@ -173,13 +173,34 @@ color: amber-light
 
 ::content::
 
+<div class="grid grid-cols-7 gap-4">
+
+<div class="col-span-6">
+
 <div class="topic-box">
 
 <div style="text-align: center;">
 
-😭😭😭😭 We need to wait **3122 years** 😭😭😭😭
+We need to wait **3122 years**
 
 if the current improvement rate of 0.0046 / 35 years continues
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-span-1">
+
+![coldsleep](./images/coldsleep_man.png)
+
+<figcaption style="text-align: center; font-size: 0.6em; color: #666;">
+
+Use coldsleep!
+
+</figcaption>
+
 
 </div>
 
@@ -250,7 +271,7 @@ color: amber-light
 
 - Implementation of matrix mult algorithms using **physical devices**
   - Water flow <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ITCS.2024.96" class="cite-reference">\[Valinat, ITCS'24\]</a>, thermodynamic systems <a href="https://openreview.net/forum?id=6flkWTzK2H" class="cite-reference">\[Coles et al, NeurIPS'23 (workshop)\]</a>, optical devices <a href = "https://www.nature.com/articles/s41377-022-00717-8" class="cite-reference">\[Zhou et al, Light: Science & Applications'22\]</a>
-  - [post](https://www.quantamagazine.org/ai-needs-enormous-computing-power-could-light-based-chips-help-20240520/) by Quanta Magazine
+  - Submarine communications cables are based on **optical** fibers
 
 </v-click>
 
@@ -322,14 +343,14 @@ color: amber-light
 <v-clicks>
 
 - The first **approximate** matrix mult result: <a class="cite-reference" href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2024.34">\[Gola, Shinkar, Singh, RANDOM'24\]</a>
-  - Similar result for $\F=\F_2$ (under one-sided error setting)
   - $\exists$ algo with $\alpha>\frac{8}{9}$ $\Rightarrow$ $\exists$ algo with $\alpha=1$
+  - open question: $\alpha\ge \frac{1}{\abs{\F}}+\varepsilon$?
 
-- Improvement: <a class="cite-reference" href="https://dl.acm.org/doi/10.1145/3717823.3718244">\[Hirahara, S., STOC'25\]</a>
-  - If $\abs{\F}>n/\alpha^2$, $\exists$ algo with average-agreement $\alpha$ $\Rightarrow$ $\exists$ algo with average-agreement $1$.
+- Our previous work <a class="cite-reference" href="https://dl.acm.org/doi/10.1145/3717823.3718244">\[Hirahara, S., STOC'25\]</a>
   - If $\abs{\F}=O(1)$, $\exists$ algo with average-agreement $\frac{\textcolor{c2185b}{2}}{\abs{\F}}+\varepsilon$ $\Rightarrow$ $\exists$ algo with average-agreement $1$
+    - does not work for $\F=\F_2$
   - If $\abs{\F}=O(1)$, $\exists$ **circuit** with average-agreement $\frac{\textcolor{c2185b}{1}}{\abs{\F}}+\varepsilon$ $\Rightarrow$ $\exists$ **circuit** with average-agreement $1$
-    - **nonuniform**: for every $n$, there is a reduction $R_n$ such that ...
+    - **nonuniform**: for every $n$, there exists a reduction $R_n$ such that ...
 </v-clicks>
 
 ---
@@ -358,7 +379,7 @@ If there exists a $T(n)$-time algorithm with average agreement **$\alpha\ge \fra
 then there exists an $2^{2^{\poly(\abs{\F}/\varepsilon)}}\cdot T(n)\cdot \polylog(n)$-time algorithm with average agreement $1$.
 </div>
 
-
+- Resolves the open question of <a class="cite-reference" href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2024.34">\[Gola, Shinkar, Singh, RANDOM'24\]</a>
 - Independently, <a class="cite-reference" href="https://arxiv.org/abs/2502.13065">\[Vaikuntanathan, Zamir, '25\]</a> showed the same result (completely different approach)
   - conditional (under the hardness of **Learning with Error**)
   - much better overhead: **$\polylog(\abs{\F}/\varepsilon)$**
@@ -593,14 +614,35 @@ color: amber-light
 
 <div style="display: flex; justify-content: center; align-items: center;">
 
-![Matrix construction](./images/lifting.svg)
+![Matrix construction](./images/lifting.svg){width=90%}
 
 </div>
 
 - The $(\mathbf{i},\mathbf{j})$-th entry of $A'\cdot B'$ equals $(AB)_{i_1,j_1} + \dots + (AB)_{i_k,j_k}$ -> "XOR" of $k$ entries of $AB$
 - Sum along the walk $(i_1,j_1)\to \dots \to (i_k,j_k)$ on the tensor product $G^2$.
-- That is, $AB$ can be viewed as encoded by the expander-walk code on $G^2$.
 
+<div class="topic-box">
+
+$A'B'$ is encoding of $AB$ using the **expander-walk code** on $G^2$.
+
+</div>
+
+---
+layout: top-title
+color: amber-light
+---
+::title::
+# New Reduction (again)
+::content::
+
+<div style="display: flex; justify-content: center; align-items: center;">
+
+![Code](./images/expander_walk_reduction.svg)
+
+</div>
+
+- encoding: $O(n^2)$-time
+- decoding: $\widetilde{O}(n^2)$-time <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, Srivastava, Tulsiani, STOC'21\]</a>, <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, RANDOM'23\]</a>
 
 
 ---
@@ -628,7 +670,7 @@ Optimal **worst-case-to-average-case** and **exact-to-approximate** reduction fo
 
 - Our future plan
   1. Deal with real numbers
-  2. Implement (perhaps using physical devices)
+  2. Implement (perhaps using optical devices)
   <v-click>3. Sell it to NVIDIA or OpenAI </v-click>
 
 </div>
