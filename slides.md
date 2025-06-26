@@ -29,23 +29,20 @@ themeConfig:
 
 # An Optimal Error-Correcting Reduction for Matrix Multiplication
 
-<div class="grid grid-cols-2 gap-4 place-items-center h-56">
+<div class="grid grid-cols-10 gap-8 place-items-center h-56">
 
-<div>
+<div class="col-span-6">
 
-- Shuichi Hirahara (National Institute of Informatics)
-- [**Nobutaka Shimizu**](https://sites.google.com/view/nobutaka-shimizu/home) (Institute of Science Tokyo)
+[**Nobutaka Shimizu**](https://sites.google.com/view/nobutaka-shimizu/home) (Institute of Science Tokyo)
+
+joint work with Shuichi Hirahara (National Institute of Informatics)
 
 </div>
-<div>
+<div class="col-span-4">
 
-  <QRCode value="https://nobutakashimizu.github.io/stoc25_slide/" :size="120" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="120" render-as="svg"/>
 
 <div class="text-center text-blue-500 text-sm">
-
-  $\uparrow$ [slide (github page)](https://nobutakashimizu.github.io/stoc25_slide/)
-
-  [ECCC link](https://eccc.weizmann.ac.il/report/2025/031/)
 
 </div>
 </div>
@@ -680,7 +677,7 @@ Optimal **worst-case-to-average-case** and **exact-to-approximate** reduction fo
 <img src="./images/money_okanemochi.png" alt="okanemochi" style="width: 60%; height: 60%" />
 
 <div style="display: flex; justify-content: center; align-items: center;" v-click="2">
-<QRCode value="https://nobutakashimizu.github.io/stoc25_slide/" :size="70" render-as="svg"/>
+<QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="70" render-as="svg"/>
 </div>
 
 <div v-click="2">
