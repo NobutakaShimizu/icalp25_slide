@@ -64,7 +64,7 @@ color: amber-light
 
 <div class="question">
 
-What does this plot represent?
+What does this plot represent?🤔
 
 </div>
 
