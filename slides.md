@@ -44,6 +44,10 @@ joint work with Shuichi Hirahara (National Institute of Informatics)
 
 <div class="text-center text-blue-500 text-sm">
 
+[proceedings](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ICALP.2025.97)
+
+[ECCC](https://eccc.weizmann.ac.il/report/2025/031/)
+
 </div>
 </div>
 
