@@ -215,7 +215,7 @@ color: amber-light
 
 <div style="text-align: center;">
 
-I'm regret to inform you that **3122 years** needed...
+You need to wait for **$>$ 3000 years**...
 
 (if the current improvement rate of 0.0046 / 35 years continues)
 
@@ -319,7 +319,7 @@ color: amber-light
 
 <div class="topic-box">
 
-In this paper, we are pleased to inform you that error-correction is **possible**!😄
+This paper presents how to correct such error!😄
 
 </div>
 
