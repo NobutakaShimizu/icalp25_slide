@@ -63,7 +63,7 @@ layout: top-title
 color: amber-light
 ---
 ::title::
-# Question
+# Quiz
 ::content::
 
 <div class="question">
@@ -110,7 +110,7 @@ color: amber-light
 
 <div class="topic-box">
 
-Improvements of exponents in fast square matrix multiplication algorithms
+**Answer**: History of fast matrix multiplication
 
 </div>
 
@@ -207,36 +207,29 @@ color: amber-light
 
 ::content::
 
-<div class="grid grid-cols-7 gap-4">
+<div class="grid grid-cols-8 gap-4">
 
-<div class="col-span-6">
+  <div class="col-span-6">
 
-<div class="topic-box">
+  <div class="topic-box">
 
-<div style="text-align: center;">
+  <div style="text-align: center;">
 
-You need to wait for **$>$ 3000 years**...
+  You need to wait for **$>$ 3000 years**...
 
-(if the current improvement rate of 0.0046 / 35 years continues)
+  (if the current improvement rate of 0.0046 / 35 years continues)
 
-</div>
+  </div>
 
-</div>
+  </div>
 
-</div>
+  </div>
 
-<div class="col-span-1">
+  <div class="col-span-2">
 
-![coldsleep](./images/coldsleep_man.png)
+  ![history](./images/history.png)
 
-<figcaption style="text-align: center; font-size: 0.6em; color: #666;">
-
-Need coldsleep!
-
-</figcaption>
-
-
-</div>
+  </div>
 
 </div>
 
@@ -300,14 +293,13 @@ color: amber-light
 
 ::content::
 
-- AI rely on large-scale matrix mult on GPU
+- AI rely on large-scale matrix mult on GPU (e.g., computing gradient)
   - According to [International Energy Agency](https://www.iea.org/reports/electricity-2024/executive-summary), in 2026, **electricity consumption** from data centres, AI and the cryptocurrency could be the same as the total electricity consumption of Japan.
 
 <v-click>
 
 - Implementation of matrix mult algorithms using **physical devices**
   - Water flow <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ITCS.2024.96" class="cite-reference">\[Valinat, ITCS'24\]</a>, thermodynamic systems <a href="https://openreview.net/forum?id=6flkWTzK2H" class="cite-reference">\[Coles et al, NeurIPS'23 (workshop)\]</a>, optical devices <a href = "https://www.nature.com/articles/s41377-022-00717-8" class="cite-reference">\[Zhou et al, Light: Science & Applications'22\]</a>
-  - Submarine communications cables are based on **optical** fibers
 
 </v-click>
 
@@ -356,7 +348,6 @@ $$
 
 <v-clicks>
 
-- $\alpha=1$ means that $M$ computes $AB$ exactly for any input $A,B$.
 - Why **average-case**?🤔 -> we can estimate **$\alpha$** in $\widetilde{O}(n^2)$ time by random sampling🤓
   - Choose $A,B,i,j$ and check whether $M(A,B)_{i,j}=(AB)_{i,j}$
 
@@ -417,7 +408,7 @@ then there exists an $2^{2^{\poly(\abs{\F}/\varepsilon)}}\cdot T(n)\cdot \polylo
 
 - Resolves the open question of <a class="cite-reference" href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2024.34">\[Gola, Shinkar, Singh, RANDOM'24\]</a>
 - Independently, <a class="cite-reference" href="https://arxiv.org/abs/2502.13065">\[Vaikuntanathan, Zamir, '25\]</a> showed the same result (completely different approach)
-  - conditional (under the hardness of **Learning with Error**)
+  - conditional (under the hardness assumption of **Learning with Error**)
   - much better overhead: **$\polylog(\abs{\F}/\varepsilon)$**
 
 </v-clicks>
@@ -442,8 +433,6 @@ color: amber-light
 
 ::content::
 
-$M$: worst-case approximation algorithm such that $\agr(M(A,B),AB)\ge\alpha$ for any $A,B\in\F^{n\times n}$
-
 <div style="display: flex; justify-content: center; align-items: center;">
 
 ![Code](./images/reduction.svg)
@@ -454,7 +443,7 @@ $M$: worst-case approximation algorithm such that $\agr(M(A,B),AB)\ge\alpha$ for
 
 <div class="topic-box">
 
-Construct $A'$ and $B'$ such that $A'\cdot B'$ is the encoding of $AB$.
+Construct $A'$ and $B'$ such that $A'\cdot B' = \Enc(AB)$.
 
 </div>
 
@@ -471,8 +460,7 @@ color: amber-light
 
 ::content::
 
-- An **encoding function** is a linear map $\Enc\colon \F^n\to\F^N$
-  - $\Enc(z)=Lz$ for $L\in\F^{N\times n}$
+- An **encoding function** is a linear map $\Enc\colon z \mapsto Lz$ for a matrix $L\in\F^{N\times n}$
   - A **code** is $\calC=\Enc(\F^n)\subseteq \F^N$
   
 <div style="display: flex; justify-content: center; align-items: center;">
@@ -532,40 +520,14 @@ color: amber-light
 # Previous Technique \[Hirahara, S., STOC'25\]
 ::content::
 
-<div class="definition">
-
-The **tensor code** with respect to $\Enc\colon x\mapsto Lx$ is the code $\calC^2\subseteq\F^{N\times N}$ specified by the encoding function $\Enc'\colon \F^{n\times n} \to \F^{N\times N}$ defined by
-  $$ \Enc'\colon X \mapsto L X L^\top. $$
-
-</div>
-
-
-<div style="display: flex; justify-content: center; align-items: center;">
-
-![tensor encoding](./images/tensor.svg)
-
-</div>
-
-- original code is $(1-\textcolor{c2185b}{\alpha},O(1))$-list-decodable $\Rightarrow$ tensor code is $(1-\textcolor{c2185b}{2\alpha},O(1))$-list-decodable <a href="https://epubs.siam.org/doi/10.1137/090778274" class="cite-reference">\[Gopalan, Guruswami, Raghavendra, SICOMP'11\]</a>.
-
-  - the non-optimality of $\alpha\ge \frac{\textcolor{c2185b}{2}}{\abs{\F}}+\varepsilon$ in our uniform reduction is due to this loss
-
----
-layout: top-title
-color: amber-light
----
-::title::
-# Previous Technique \[Hirahara, S., STOC'25\]
-::content::
-
 <div style="display: flex; justify-content: center; align-items: center;">
 
 ![tensor encoding](./images/LRreduction.svg)
 
 </div>
 
-- Product = Tensor encoding of $AB$
-- We can identify $AB$ from the list by **Freivalds' randomized verification**
+- $L^\top AB L$ is list-decodable if $z\mapsto Lz$ is <a href="https://epubs.siam.org/doi/10.1137/090778274" class="cite-reference">\[Gopalan, Guruswami, Raghavendra, SICOMP'11\]</a> at the cost of decoding radius
+  - this cost was the main reason why $\alpha \ge \frac{2}{\abs{\F}}+\varepsilon$
 
 
 ---
@@ -576,10 +538,9 @@ color: amber-light
 # New Reduction (Sketch)
 ::content::
 
-- The loss of $2$-factor in $\alpha$ is due to decoding algo for tensor codes
-- key idea: avoid tensor code using **expander-walk lifting**
+- This paper: Use **expander graph**
 
-<div style="display: flex; justify-content: center; align-items: center;" v-click>
+<div style="display: flex; justify-content: center; align-items: center;">
 
 ![Code](./images/expander_walk_reduction.svg)
 
@@ -595,9 +556,9 @@ color: amber-light
 
 <div class="definition">
 
-Let $G=(V,E)$ be a $d$-regular **expander** graph and 
+Let $G=(V,E)$ be a $d$-regular **spectral expander** and 
 $W\subseteq V^\ell$ be the set of all walks of length $\ell-1$ on $G$ (specifically, $W \subseteq V^\ell$).
-**Expander-walk code** is the code defined by the following encoding function $\Enc\colon \F^V\to\F^W$:
+**Direct sum code over expander walk** is the code defined by the following encoding function $\Enc\colon \F^V\to\F^W$:
 
 $$
   \Enc(x) = \rbra{ x(v_0)+x(v_1)+\dots+x(v_{\ell-1}) }_{(v_0,v_1,\dots,v_{\ell-1})\in W }
@@ -611,13 +572,8 @@ $$
 
 </div>
 
-<figcaption style="text-align: center; font-size: 0.8em; color: #666;">
 
-Sum the values of vertices traversed by a walk of length $2$
-
-</figcaption>
-
-- $\widetilde{O}(\abs{W})$-time approximate list-decoding algorithms <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, Srivastava, Tulsiani, STOC'21\]</a>, <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, RANDOM'23\]</a>
+- efficient approximate list-decoding <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, Srivastava, Tulsiani, STOC'21\]</a>, <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, RANDOM'23\]</a>
 
 ---
 layout: top-title
@@ -677,8 +633,7 @@ color: amber-light
 
 </div>
 
-- encoding: $O(n^2)$-time
-- decoding: $\widetilde{O}(n^2)$-time <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, Srivastava, Tulsiani, STOC'21\]</a>, <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, RANDOM'23\]</a>
+- From 99\% to 100\%:  <a class="cite-reference" href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2024.34">\[Gola, Shinkar, Singh, RANDOM'24\]</a>
 
 
 ---
@@ -686,7 +641,7 @@ layout: top-title
 color: amber-light
 ---
 ::title::
-# Summary
+# Summary & Future Direction
 ::content::
 
 <div class="topic-box">
@@ -695,39 +650,11 @@ Optimal **worst-case-to-average-case** and **exact-to-approximate** reduction fo
 
 </div>
 
-<div class="grid grid-cols-2 gap-4">
+<br>
 
-<div>
+# Future Directions
 
-- Open Question
-  - Reduce the hidden constant **$2^{2^{\poly(p/\varepsilon)}}$**?
-  - matrix over **$\Real$** or **$\mathbb{Q}$**?
-    - how to formalize? (ideas welcome!!!)
-
-- Our future plan
-  1. Deal with real numbers
-  2. Implement (perhaps using optical devices)
-  <v-click>3. Sell it to NVIDIA or OpenAI </v-click>
-
-</div>
-
-<div v-click="1" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-
-<img src="./images/money_okanemochi.png" alt="okanemochi" style="width: 60%; height: 60%" />
-
-<div style="display: flex; justify-content: center; align-items: center;" v-click="2">
-<QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="70" render-as="svg"/>
-</div>
-
-<div v-click="2">
-
-Thank you!
-
-</div>
-
-</div>
-
-
-
-
-</div>
+- Reduce the hidden constant **$2^{2^{\poly(p/\varepsilon)}}$**?
+  - Possible under nonuniform reductions <a class="cite-reference" href="https://dl.acm.org/doi/10.1145/3717823.3718244">\[Hirahara, S., STOC'25\]</a> or conditional reductions <a class="cite-reference" href="https://arxiv.org/abs/2502.13065">\[Vaikuntanathan, Zamir, '25\]</a>
+- matrix over **$\Real$** or **$\mathbb{Q}$**?
+  - how to convert worst-case approximation solver into worst-case exact solver?
