@@ -657,4 +657,5 @@ Optimal **worst-case-to-average-case** and **exact-to-approximate** reduction fo
 - Reduce the hidden constant **$2^{2^{\poly(p/\varepsilon)}}$**?
   - Possible under nonuniform reductions <a class="cite-reference" href="https://dl.acm.org/doi/10.1145/3717823.3718244">\[Hirahara, S., STOC'25\]</a> or conditional reductions <a class="cite-reference" href="https://arxiv.org/abs/2502.13065">\[Vaikuntanathan, Zamir, '25\]</a>
 - matrix over **$\Real$** or **$\mathbb{Q}$**?
-  - how to convert worst-case approximation solver into worst-case exact solver?
+  - proof **without** error-correcting code?
+  - how to convert worst-case **approximation** solver into worst-case **exact** solver?
