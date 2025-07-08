@@ -293,4 +293,21 @@ strong {
   color: #e65100;
   font-weight: bold;
   font-size: 0.95em;
+}
+
+/* QRコードを各ページの右上に固定表示 */
+.qr-code-fixed {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  z-index: 1000;
+  background: transparent;
+  padding: 0;
+  transform: scale(0.6);
+  transform-origin: top right;
+}
+
+/* 最初のページ（カバーページ）ではQRコードを非表示にする */
+.slidev-layout.cover .qr-code-fixed {
+  display: none;
 } 

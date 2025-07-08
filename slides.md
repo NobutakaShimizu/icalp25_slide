@@ -44,9 +44,9 @@ joint work with Shuichi Hirahara (National Institute of Informatics)
 
 <div class="text-center text-blue-500 text-sm">
 
-[proceedings](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ICALP.2025.97)
+[proceedings link](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ICALP.2025.97)
 
-[ECCC](https://eccc.weizmann.ac.il/report/2025/031/)
+[ECCC link](https://eccc.weizmann.ac.il/report/2025/031/)
 
 </div>
 </div>
@@ -65,6 +65,10 @@ color: amber-light
 ::title::
 # Quiz
 ::content::
+
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
 
 <div class="question">
 
@@ -107,6 +111,10 @@ color: amber-light
 # Matrix Multiplication
 
 ::content::
+
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
 
 <div class="topic-box">
 
@@ -167,6 +175,10 @@ color: amber-light
 
 ::content::
 
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
+
 <div class="question">
 
 When can we get an $O(n^2)$-time algorithm?🧐
@@ -206,6 +218,10 @@ color: amber-light
 # Computational Complexity of Matrix Multiplication
 
 ::content::
+
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
 
 <div class="grid grid-cols-8 gap-4">
 
@@ -257,6 +273,9 @@ color: amber-light
 
 ::content::
 
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
 
 <div class="topic-box">
 
@@ -274,11 +293,12 @@ Given two **random** matrices $A,B\sim\F^{n\times n}$ as input, compute any matr
 
 - $\alpha = 1$: the usual (average-case) matrix mult
 
-- $\alpha = \frac{1}{\abs{\F}}$ and $\alpha=\frac{1}{n}$ are easy (random matrix or compute $n$ entries)
-
-- This paper: small $\abs{\F}$ (indeed constant size field)
+- $\alpha = \frac{1}{\abs{\F}}$ is easy (random matrix)
 
 - An algorithm is non-trivial if $\alpha \ge \frac{1}{\abs{\F}} + \textcolor{c2185b}{\varepsilon}$ (better than random guess)
+
+  - This paper: $\abs{\F}$ is small (indeed constant size field)
+
 
 </v-clicks>
 
@@ -293,8 +313,12 @@ color: amber-light
 
 ::content::
 
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
+
 - AI rely on large-scale matrix mult on GPU (e.g., computing gradient)
-  - According to [International Energy Agency](https://www.iea.org/reports/electricity-2024/executive-summary), in 2026, **electricity consumption** from data centres, AI and the cryptocurrency could be the same as the total electricity consumption of Japan.
+  - In 2026, **electricity consumption** from data centres and cryptocurrency $\approx$ total electricity consumption of Japan <a class="cite-reference" href="https://www.iea.org/reports/electricity-2024/executive-summary"> \[International Energy Agency\] </a>
 
 <v-click>
 
@@ -327,6 +351,10 @@ color: amber-light
 # Problem Setting (Formal)
 
 ::content::
+
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
 
 <div class="definition">
 
@@ -364,6 +392,10 @@ color: amber-light
 
 ::content::
 
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
+
 - Worst-case to average-case reductions for **exact** matrix mult
   - <a href="https://www.sciencedirect.com/science/article/pii/002200009390044W?via%3Dihub" class="cite-reference">\[Blum, Luby, Rubinfeld, JCSS'93\]</a>, <a href="https://dl.acm.org/doi/10.1145/3519935.3520041" class="cite-reference">\[Asadi, Golovnev, Gur, Shinkar, STOC'22\]</a>, <a href="https://dl.acm.org/doi/10.1145/3564246.3585189" class="cite-reference">\[Hirahara, S., STOC'23\]</a>
 
@@ -390,6 +422,10 @@ color: amber-light
 # Main Result
 
 ::content::
+
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
 
 <div class="question">
 
@@ -422,6 +458,10 @@ color: amber-light
 
 # Proof Idea
 
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
+
 ---
 layout: top-title
 color: amber-light
@@ -432,6 +472,10 @@ color: amber-light
 # Idea: Matrix Encoding
 
 ::content::
+
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
 
 <div style="display: flex; justify-content: center; align-items: center;">
 
@@ -460,6 +504,10 @@ color: amber-light
 
 ::content::
 
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
+
 - An **encoding function** is a linear map $\Enc\colon z \mapsto Lz$ for a matrix $L\in\F^{N\times n}$
   - A **code** is $\calC=\Enc(\F^n)\subseteq \F^N$
   
@@ -486,6 +534,9 @@ color: amber-light
 
 ::content::
 
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
 
 <div class="definition">
 
@@ -502,15 +553,6 @@ A code $\calC\subseteq\F^N$ is **$(\rho,L)$-list-decodable** if $\abs{\calC \cap
 
 </div>  
 
-<v-click>
-
-<div class = "topic-box">
-
-What we need: **$\widetilde{O}(N)$-time list-decodable code**
-
-</div>
-
-</v-click>
 
 ---
 layout: top-title
@@ -519,6 +561,10 @@ color: amber-light
 ::title::
 # Previous Technique \[Hirahara, S., STOC'25\]
 ::content::
+
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
 
 <div style="display: flex; justify-content: center; align-items: center;">
 
@@ -538,6 +584,10 @@ color: amber-light
 # New Reduction (Sketch)
 ::content::
 
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
+
 - This paper: Use **expander graph**
 
 <div style="display: flex; justify-content: center; align-items: center;">
@@ -553,6 +603,10 @@ color: amber-light
 ::title::
 # Expander-Walk Code
 ::content::
+
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
 
 <div class="definition">
 
@@ -583,6 +637,10 @@ color: amber-light
 # Lifting
 ::content::
 
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
+
 <div style="display: flex; justify-content: center; align-items: center;">
 
 ![lifting](./images/expander_construction.svg)
@@ -603,6 +661,10 @@ color: amber-light
 ::title::
 # Product of Lifting
 ::content::
+
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
 
 <div style="display: flex; justify-content: center; align-items: center;">
 
@@ -627,6 +689,10 @@ color: amber-light
 # New Reduction (again)
 ::content::
 
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
+
 <div style="display: flex; justify-content: center; align-items: center;">
 
 ![Code](./images/expander_walk_reduction.svg)
@@ -644,6 +710,10 @@ color: amber-light
 # Summary & Future Direction
 ::content::
 
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
+
 <div class="topic-box">
 
 Optimal **worst-case-to-average-case** and **exact-to-approximate** reduction for matrix mult.
@@ -658,4 +728,4 @@ Optimal **worst-case-to-average-case** and **exact-to-approximate** reduction fo
   - Possible under nonuniform reductions <a class="cite-reference" href="https://dl.acm.org/doi/10.1145/3717823.3718244">\[Hirahara, S., STOC'25\]</a> or conditional reductions <a class="cite-reference" href="https://arxiv.org/abs/2502.13065">\[Vaikuntanathan, Zamir, '25\]</a>
 - matrix over **$\Real$** or **$\mathbb{Q}$**?
   - proof **without** error-correcting code?
-  - how to convert worst-case **approximation** solver into worst-case **exact** solver?
+  - approximation-to-exact reduction within worst-case complexity?
