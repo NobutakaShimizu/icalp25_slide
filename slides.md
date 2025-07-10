@@ -456,7 +456,9 @@ layout: section
 color: amber-light
 ---
 
-# Idea for worst-case-to-worst-case reduction
+# Idea
+
+### (for worst-case-to-worst-case reduction)
 
 ---
 layout: top-title
@@ -715,7 +717,7 @@ layout: top-title
 color: amber-light
 ---
 ::title::
-# New Reduction (again)
+# Our Reduction (reminder)
 ::content::
 
 <div class="qr-code-fixed">
@@ -730,6 +732,7 @@ color: amber-light
 
 - From 99\% to 100\%:  <a class="cite-reference" href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2024.34">\[Gola, Shinkar, Singh, RANDOM'24\]</a>
 
+- Worst-case-to-average-case reduction: modification of this (the most technical point)
 
 ---
 layout: top-title
