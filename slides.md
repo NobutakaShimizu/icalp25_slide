@@ -634,6 +634,39 @@ layout: top-title
 color: amber-light
 ---
 ::title::
+# Expander-Walk Code
+::content::
+
+<div class="qr-code-fixed">
+  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+</div>
+
+<div class="definition">
+
+Let $G=(V,E)$ be a $d$-regular **spectral expander** and 
+$W\subseteq V^\ell$ be the set of all walks of length $\ell-1$ on $G$ (specifically, $W \subseteq V^\ell$).
+**Direct sum code over expander walk** is the code defined by the following encoding function $\Enc\colon \F^V\to\F^W$:
+
+$$
+  \Enc(x) = \rbra{ x(v_0)+x(v_1)+\dots+x(v_{\ell-1}) }_{(v_0,v_1,\dots,v_{\ell-1})\in W }
+$$
+
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center;">
+
+![Expander-walk code](./images/expanderwalk2.svg)
+
+</div>
+
+
+- efficient approximate list-decoding <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, Srivastava, Tulsiani, STOC'21\]</a>, <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, RANDOM'23\]</a>
+
+---
+layout: top-title
+color: amber-light
+---
+::title::
 # Lifting
 ::content::
 
@@ -649,7 +682,7 @@ color: amber-light
 
 <figcaption style="text-align: center; font-size: 0.8em; color: #666;">
 
-Matrix $A'$ becomes an $\abs{W}\times kn$ matrix. The $\mathbf{i}=(i_1,\dots,i_k)$-th row contains the $i_1$-th row vector, $i_2$-th row vector, ... of $A$.
+$A'$ becomes an $\abs{W}\times kn$ matrix. The $\mathbf{i}=(i_1,\dots,i_k)$-th row contains the $i_1$-th row vector, $i_2$-th row vector, ... of $A$. <br>
 $B'$ is constructed by applying the same operation to $B$ with rows and columns interchanged.
 
 </figcaption>
