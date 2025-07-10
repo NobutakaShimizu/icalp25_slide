@@ -456,11 +456,7 @@ layout: section
 color: amber-light
 ---
 
-# Proof Idea
-
-<div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
-</div>
+# Idea for worst-case-to-worst-case reduction
 
 ---
 layout: top-title
@@ -760,5 +756,7 @@ Optimal **worst-case-to-average-case** and **exact-to-approximate** reduction fo
 - Reduce the hidden constant **$2^{2^{\poly(p/\varepsilon)}}$**?
   - Possible under nonuniform reductions <a class="cite-reference" href="https://dl.acm.org/doi/10.1145/3717823.3718244">\[Hirahara, S., STOC'25\]</a> or conditional reductions <a class="cite-reference" href="https://arxiv.org/abs/2502.13065">\[Vaikuntanathan, Zamir, '25\]</a>
 - matrix over **$\Real$** or **$\mathbb{Q}$**?
+  - Easy to compute $n$ entries (i.e., $\alpha =1/n$). Can we do larger $\alpha$?
+  - or: approximation-to-exact reduction within worst-case complexity?
   - proof **without** error-correcting code?
-  - approximation-to-exact reduction within worst-case complexity?
+
