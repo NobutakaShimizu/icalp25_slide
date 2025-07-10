@@ -40,7 +40,7 @@ joint work with Shuichi Hirahara (National Institute of Informatics)
 </div>
 <div class="col-span-4">
 
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="120" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="120" render-as="svg"/>
 
 <div class="text-center text-blue-500 text-sm">
 
@@ -67,7 +67,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div class="question">
@@ -113,7 +113,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div class="topic-box">
@@ -176,7 +176,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div class="question">
@@ -220,7 +220,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div class="grid grid-cols-8 gap-4">
@@ -274,7 +274,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div class="topic-box">
@@ -314,7 +314,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 - AI rely on large-scale matrix mult on GPU (e.g., computing gradient)
@@ -353,7 +353,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div class="definition">
@@ -393,7 +393,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 - Worst-case to average-case reductions for **exact** matrix mult
@@ -424,7 +424,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div class="question">
@@ -459,7 +459,7 @@ color: amber-light
 # Proof Idea
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 ---
@@ -474,7 +474,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div style="display: flex; justify-content: center; align-items: center;">
@@ -505,7 +505,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 - An **encoding function** is a linear map $\Enc\colon z \mapsto Lz$ for a matrix $L\in\F^{N\times n}$
@@ -535,7 +535,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div class="definition">
@@ -563,7 +563,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div style="display: flex; justify-content: center; align-items: center;">
@@ -585,7 +585,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 - This paper: Use **expander graph**
@@ -605,7 +605,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div class="definition">
@@ -638,7 +638,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div class="definition">
@@ -671,7 +671,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div style="display: flex; justify-content: center; align-items: center;">
@@ -696,7 +696,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div style="display: flex; justify-content: center; align-items: center;">
@@ -723,7 +723,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div style="display: flex; justify-content: center; align-items: center;">
@@ -744,7 +744,7 @@ color: amber-light
 ::content::
 
 <div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp_2025/" :size="80" render-as="svg"/>
+  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
 <div class="topic-box">
