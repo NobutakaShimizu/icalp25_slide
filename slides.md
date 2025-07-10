@@ -518,7 +518,8 @@ color: amber-light
 <v-clicks>
   
 - $r=n/N$: **rate** of $\calC$ (larger $r$ is better)
-- **distance**: fractional Hamming distance, i.e., $\dist(x,y):=\Pr_{i\sim[N]}[x_i\ne y_i]$
+- **distance of vectors**: fractional Hamming distance, i.e., $\dist(x,y):=\Pr_{i\sim[N]}[x_i\ne y_i]$
+  - $\delta=\min_{x\ne y\in \calC} \dist(x,y)$: minimum distance of code $\calC$
 
 </v-clicks>
 
@@ -551,6 +552,15 @@ A code $\calC\subseteq\F^N$ is **$(\rho,L)$-list-decodable** if $\abs{\calC \cap
 
 </div>  
 
+<v-clicks>
+
+- $L=1$ : unique decoding
+  - we must have $\rho< 1/2$ (unless $\abs{\calC}=1$)
+
+- $L>1$ : list decoding ($L=O(1)$ is **independent** of $N$)
+  - we can have $\rho \approx \delta \le 1-r$ (Singleton bound)
+
+</v-clicks>
 
 ---
 layout: top-title
@@ -570,8 +580,8 @@ color: amber-light
 
 </div>
 
-- $L^\top AB L$ is list-decodable if $z\mapsto Lz$ is <a href="https://epubs.siam.org/doi/10.1137/090778274" class="cite-reference">\[Gopalan, Guruswami, Raghavendra, SICOMP'11\]</a> at the cost of decoding radius
-  - this cost was the main reason why $\alpha \ge \frac{2}{\abs{\F}}+\varepsilon$
+- $L^\top AB L$ is list-decodable if $z\mapsto Lz$ is <a href="https://epubs.siam.org/doi/10.1137/090778274" class="cite-reference">\[Gopalan, Guruswami, Raghavendra, SICOMP'11\]</a> at the cost of $\rho$
+  - the main reason why $\alpha \ge \frac{\textcolor{c2185b}{2}}{\abs{\F}}+\varepsilon$ in the previous work
 
 
 ---
