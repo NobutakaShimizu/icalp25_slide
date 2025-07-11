@@ -4,7 +4,7 @@ layout: cover
 title: An Optimal Error-Correcting Reduction for Matrix Multiplication
 info: |
   ## An Optimal Error-Correcting Reduction for Matrix Multiplication
-  ICALP 2025
+  ICALP 2025, Denmark, Aarhus
 
 author: Nobutaka Shimizu
 mdc: true
@@ -15,7 +15,7 @@ addons:
   - slidev-addon-rabbit
 rabbit:
   slideNum: true 
-fonts:
+fonts: 
   sans: 'Roboto'
   mono: 'Fira Code'
   weights: '400,500,700'
@@ -55,7 +55,7 @@ joint work with Shuichi Hirahara (National Institute of Informatics)
 
 :: note ::
 <div class="text-slate-500">
-  @ICALP 2025
+  ICALP 2025, Denmark, Aarhus
 </div>
 
 ---
@@ -376,8 +376,9 @@ $$
 
 <v-clicks>
 
-- Why **average-case**?🤔 -> we can estimate **$\alpha$** in $\widetilde{O}(n^2)$ time by random sampling🤓
-  - Choose $A,B,i,j$ and check whether $M(A,B)_{i,j}=(AB)_{i,j}$
+- Why **average-case**?🤔 
+  - we can estimate **$\alpha$** in $\widetilde{O}(n^2)$ time by random sampling🤓
+  - worst-case complexity is too pessimistic
 
 </v-clicks>
 
@@ -580,8 +581,8 @@ color: amber-light
 
 </div>
 
-- $L^\top AB L$ is list-decodable if $z\mapsto Lz$ is <a href="https://epubs.siam.org/doi/10.1137/090778274" class="cite-reference">\[Gopalan, Guruswami, Raghavendra, SICOMP'11\]</a> at the cost of $\rho$
-  - the main reason why $\alpha \ge \frac{\textcolor{c2185b}{2}}{\abs{\F}}+\varepsilon$ in the previous work
+- If $z\mapsto Lz$ is list-decodable within radius $1-\alpha$, then $X\mapsto L^\top X L$ is list-decodable within radius $1-\textcolor{c2185b}{2\alpha}$ <a href="https://epubs.siam.org/doi/10.1137/090778274" class="cite-reference">\[Gopalan, Guruswami, Raghavendra, SICOMP'11\]</a>
+  - the main reason for $\alpha \ge \frac{\textcolor{c2185b}{2}}{\abs{\F}}+\varepsilon$ in the previous work
 
 
 ---
@@ -596,11 +597,13 @@ color: amber-light
   <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
-- This paper: Use **expander graph**
+# our solution: **expander graph**
+
+
 
 <div style="display: flex; justify-content: center; align-items: center;">
 
-![Code](./images/expander_walk_reduction.svg)
+![Code](./images/animal_panda.png)
 
 </div>
 
@@ -619,8 +622,8 @@ color: amber-light
 <div class="definition">
 
 Let $G=(V,E)$ be a $d$-regular **spectral expander** and 
-$W\subseteq V^\ell$ be the set of all walks of length $\ell-1$ on $G$ (specifically, $W \subseteq V^\ell$).
-**Direct sum code over expander walk** is the code defined by the following encoding function $\Enc\colon \F^V\to\F^W$:
+$W\subseteq V^\ell$ be the set of all walks of length $\ell-1$ on $G$.
+**$\ell$-wise direct sum encoding over $G$** is function $\Enc\colon \F^V\to\F^W$ defined by
 
 $$
   \Enc(x) = \rbra{ x(v_0)+x(v_1)+\dots+x(v_{\ell-1}) }_{(v_0,v_1,\dots,v_{\ell-1})\in W }
@@ -635,6 +638,7 @@ $$
 </div>
 
 
+- appeared in <a href="https://dl.acm.org/doi/10.1145/3055399.3055408" class="cite-reference">\[Ta-Shma, 2017\]</a>
 - efficient approximate list-decoding <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, Srivastava, Tulsiani, STOC'21\]</a>, <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, RANDOM'23\]</a>
 
 ---
@@ -767,9 +771,17 @@ Optimal **worst-case-to-average-case** and **exact-to-approximate** reduction fo
 # Future Directions
 
 - Reduce the hidden constant **$2^{2^{\poly(p/\varepsilon)}}$**?
-  - Possible under nonuniform reductions <a class="cite-reference" href="https://dl.acm.org/doi/10.1145/3717823.3718244">\[Hirahara, S., STOC'25\]</a> or conditional reductions <a class="cite-reference" href="https://arxiv.org/abs/2502.13065">\[Vaikuntanathan, Zamir, '25\]</a>
+  - $\poly(p/\varepsilon)$ is possible for nonuniform reductions <a class="cite-reference" href="https://dl.acm.org/doi/10.1145/3717823.3718244">\[Hirahara, S., STOC'25\]</a> or conditional reductions <a class="cite-reference" href="https://arxiv.org/abs/2502.13065">\[Vaikuntanathan, Zamir, '25\]</a>
 - matrix over **$\Real$** or **$\mathbb{Q}$**?
-  - Easy to compute $n$ entries (i.e., $\alpha =1/n$). Can we do larger $\alpha$?
+  - Easy to compute $n$ entries (i.e., agreement $\alpha =1/n$). Can we do larger $\alpha$?
   - or: approximation-to-exact reduction within worst-case complexity?
-  - proof **without** error-correcting code?
+  - ECC over alphabet $\mathbb{Q}$?
+
+<v-click>
+<div style="position: fixed; bottom: 32px; right: 32px; z-index: 1000;">
+  <div class="thank-you-box" style="background: #fffbe7; border: 1px solid #ffe082; border-radius: 8px; padding: 16px 32px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); font-size: 1.5rem; color: #ff9800;">
+    Thank you 😊
+  </div>
+</div>
+</v-click>
 
