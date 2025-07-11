@@ -708,14 +708,13 @@ color: amber-light
 
 <div style="display: flex; justify-content: center; align-items: center;">
 
-![Code](./images/expander_walk_reduction.svg)
+![Code](./images/expander_walk_reduction.svg){width=90%}
 
 </div>
 
-- From 99\% to 100\%:  <a class="cite-reference" href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2024.34">\[Gola, Shinkar, Singh, RANDOM'24\]</a>
-
-- Worst-case-to-average-case reduction: modification of this (the most technical point)
-
+- From 99\% to 100\%: rerandomization technique <a class="cite-reference" href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2024.34">\[Gola, Shinkar, Singh, RANDOM'24\]</a>
+- towards average-case reduction: decomposition result for expanders with high girth
+  - We use **random regular graph**
 ---
 layout: top-title
 color: amber-light
