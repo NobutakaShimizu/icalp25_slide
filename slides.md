@@ -62,49 +62,6 @@ joint work with Shuichi Hirahara (National Institute of Informatics)
 layout: top-title
 color: amber-light
 ---
-::title::
-# Quiz
-::content::
-
-<div class="qr-code-fixed">
-  <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
-</div>
-
-<div class="question">
-
-What does this plot represent?🤔
-
-</div>
-
-
-<div style="width: 55%; margin: 0 auto;">
-```mermaid
----
-config:
-    themeVariables:
-        xyChart:
-            plotColorPalette: "#0000FF"
----
-xychart-beta
-    x-axis [1968, 1968, 1978, 1979, 1981, 1981, 1981, 1986, 1990, 2010, 2012, 2014, 2020, 2022, 2024, 2025]
-    y-axis 2 --> 3
-    line [3, 2.807, 2.795, 2.779, 2.522, 2.517, 2.496, 2.479, 2.3755, 2.3737, 2.3729, 2.3728639, 2.3728596, 2.371866, 2.371552, 2.371339]
-```
-</div>
-
-<style>
-th {
-  background-color: #f0f0f0;
-}
-</style>
-
-
-
-
----
-layout: top-title
-color: amber-light
----
 
 ::title::
 
@@ -118,7 +75,7 @@ color: amber-light
 
 <div class="topic-box">
 
-**Answer**: History of fast matrix multiplication
+Given two $n\times n$ matrices $A,B\in\F^{n\times n}$, compute $AB$.
 
 </div>
 
@@ -179,12 +136,6 @@ color: amber-light
   <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
-<div class="question">
-
-When can we get an $O(n^2)$-time algorithm?🧐
-
-</div>
-
 <div style="width: 55%; margin: 0 auto;">
 ```mermaid
 ---
@@ -206,7 +157,11 @@ th {
 }
 </style>
 
+<div class="question" v-click>
 
+When can we get an $O(n^2)$-time algorithm?🧐
+
+</div>
 
 ---
 layout: top-title
@@ -227,15 +182,11 @@ color: amber-light
 
   <div class="col-span-6">
 
-  <div class="topic-box">
+  <div class="conjecture">
 
-  <div style="text-align: center;">
-
-  You need to wait for **$>$ 3000 years**...
+  In **5147**, there will be an $O(n^2)$-time algorithm.
 
   (if the current improvement rate of 0.0046 / 35 years continues)
-
-  </div>
 
   </div>
 
@@ -317,12 +268,11 @@ color: amber-light
   <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
-- AI rely on large-scale matrix mult on GPU (e.g., computing gradient)
-  - In 2026, **electricity consumption** from data centres and cryptocurrency $\approx$ total electricity consumption of Japan <a class="cite-reference" href="https://www.iea.org/reports/electricity-2024/executive-summary"> \[International Energy Agency\] </a>
+- Electricity consumption increases due to AI techniques relying on large-scale matrix mult on GPU (e.g., computing gradient) <a class="cite-reference" href="https://www.iea.org/reports/electricity-2024/executive-summary"> \[International Energy Agency\] </a>
 
 <v-click>
 
-- Implementation of matrix mult algorithms using **physical devices**
+- Low-energy matrix mult algorithms using **physical devices**
   - Water flow <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ITCS.2024.96" class="cite-reference">\[Valinat, ITCS'24\]</a>, thermodynamic systems <a href="https://openreview.net/forum?id=6flkWTzK2H" class="cite-reference">\[Coles et al, NeurIPS'23 (workshop)\]</a>, optical devices <a href = "https://www.nature.com/articles/s41377-022-00717-8" class="cite-reference">\[Zhou et al, Light: Science & Applications'22\]</a>
 
 </v-click>
@@ -333,11 +283,26 @@ color: amber-light
   - Physical devices solve **approximate** matrix mult
 
 
-<div class="topic-box">
+<div class="grid grid-cols-8 gap-4">
 
-This paper presents how to correct such error!😄
+  <div class="col-span-6">
+
+  <div class="topic-box" style="margin: 0; text-align: center;">
+
+  This paper presents how to correct such error using **expanders**!😄
+
+  </div>
+
+  </div>
+
+  <div class="col-span-2">
+
+  ![history](./images/hero_woman.png){width="70%"}
+
+  </div>
 
 </div>
+
 
 </v-clicks>
 
@@ -373,14 +338,13 @@ $$
  
  </div>
 
+<div class="topic-box" v-click>
 
-<v-clicks>
+**Our Prototype Result**: 
 
-- Why **average-case**?🤔 
-  - we can estimate **$\alpha$** in $\widetilde{O}(n^2)$ time by random sampling🤓
-  - worst-case complexity is too pessimistic
+If $\exists$ algo with agreement $\alpha$, then $\exists$ algo with agreement $1$ with similar running time.
 
-</v-clicks>
+</div>
 
 ---
 layout: top-title
@@ -397,8 +361,7 @@ color: amber-light
   <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
-- Worst-case to average-case reductions for **exact** matrix mult
-  - <a href="https://www.sciencedirect.com/science/article/pii/002200009390044W?via%3Dihub" class="cite-reference">\[Blum, Luby, Rubinfeld, JCSS'93\]</a>, <a href="https://dl.acm.org/doi/10.1145/3519935.3520041" class="cite-reference">\[Asadi, Golovnev, Gur, Shinkar, STOC'22\]</a>, <a href="https://dl.acm.org/doi/10.1145/3564246.3585189" class="cite-reference">\[Hirahara, S., STOC'23\]</a>
+- Worst-case to average-case reductions for **exact** matrix mult <a href="https://www.sciencedirect.com/science/article/pii/002200009390044W?via%3Dihub" class="cite-reference">\[Blum, Luby, Rubinfeld, JCSS'93\]</a>, <a href="https://dl.acm.org/doi/10.1145/3519935.3520041" class="cite-reference">\[Asadi, Golovnev, Gur, Shinkar, STOC'22\]</a>, <a href="https://dl.acm.org/doi/10.1145/3564246.3585189" class="cite-reference">\[Hirahara, S., STOC'23\]</a>
 
 <v-clicks>
 
@@ -407,10 +370,10 @@ color: amber-light
   - open question: $\alpha\ge \frac{1}{\abs{\F}}+\varepsilon$?
 
 - Our previous work <a class="cite-reference" href="https://dl.acm.org/doi/10.1145/3717823.3718244">\[Hirahara, S., STOC'25\]</a>
-  - If $\abs{\F}=O(1)$, $\exists$ algo with average-agreement $\frac{\textcolor{c2185b}{2}}{\abs{\F}}+\varepsilon$ $\Rightarrow$ $\exists$ algo with average-agreement $1$
+  - $\exists$ algo with $\alpha\ge \frac{\textcolor{c2185b}{2}}{\abs{\F}}+\varepsilon$ $\Rightarrow$ $\exists$ algo with $\alpha=1$
     - does not work for $\F=\F_2$
-  - If $\abs{\F}=O(1)$, $\exists$ **circuit** with average-agreement $\frac{\textcolor{c2185b}{1}}{\abs{\F}}+\varepsilon$ $\Rightarrow$ $\exists$ **circuit** with average-agreement $1$
-    - **nonuniform**: for every $n$, there exists a reduction $R_n$ such that ...
+  - $\exists$ **circuit** with $\alpha\ge\frac{\textcolor{c2185b}{1}}{\abs{\F}}+\varepsilon$ $\Rightarrow$ $\exists$ **circuit** with $\alpha=1$
+    - **nonuniform**: For every input size $n$, there **exists** a circuit $C_n$ that solves multiplication
 </v-clicks>
 
 ---
@@ -555,11 +518,12 @@ A code $\calC\subseteq\F^N$ is **$(\rho,L)$-list-decodable** if $\abs{\calC \cap
 
 <v-clicks>
 
+- We assume $L=O(1)$ (independent of $N$)
+
 - $L=1$ : unique decoding
   - we must have $\rho< 1/2$ (unless $\abs{\calC}=1$)
 
-- $L>1$ : list decoding ($L=O(1)$ is **independent** of $N$)
-  - we can have $\rho \approx \delta \le 1-r$ (Singleton bound)
+- Special case of list-recovery
 
 </v-clicks>
 
@@ -581,9 +545,12 @@ color: amber-light
 
 </div>
 
+<v-click>
+
 - If $z\mapsto Lz$ is list-decodable within radius $1-\alpha$, then $X\mapsto L^\top X L$ is list-decodable within radius $1-\textcolor{c2185b}{2\alpha}$ <a href="https://epubs.siam.org/doi/10.1137/090778274" class="cite-reference">\[Gopalan, Guruswami, Raghavendra, SICOMP'11\]</a>
   - the main reason for $\alpha \ge \frac{\textcolor{c2185b}{2}}{\abs{\F}}+\varepsilon$ in the previous work
 
+</v-click>
 
 ---
 layout: top-title
@@ -597,7 +564,7 @@ color: amber-light
   <QRCode value="https://nobutakashimizu.github.io/icalp25_slide/1" :size="80" render-as="svg"/>
 </div>
 
-# our solution: **expander graph**
+# our solution: ex**pand**er graph
 
 
 
@@ -656,8 +623,8 @@ color: amber-light
 <div class="definition">
 
 Let $G=(V,E)$ be a $d$-regular **spectral expander** and 
-$W\subseteq V^\ell$ be the set of all walks of length $\ell-1$ on $G$ (specifically, $W \subseteq V^\ell$).
-**Direct sum code over expander walk** is the code defined by the following encoding function $\Enc\colon \F^V\to\F^W$:
+$W\subseteq V^\ell$ be the set of all walks of length $\ell-1$ on $G$.
+**$\ell$-wise direct sum encoding over $G$** is function $\Enc\colon \F^V\to\F^W$ defined by
 
 $$
   \Enc(x) = \rbra{ x(v_0)+x(v_1)+\dots+x(v_{\ell-1}) }_{(v_0,v_1,\dots,v_{\ell-1})\in W }
@@ -672,6 +639,7 @@ $$
 </div>
 
 
+- appeared in <a href="https://dl.acm.org/doi/10.1145/3055399.3055408" class="cite-reference">\[Ta-Shma, 2017\]</a>
 - efficient approximate list-decoding <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, Srivastava, Tulsiani, STOC'21\]</a>, <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2023.60" class="cite-reference">\[Jeronimo, RANDOM'23\]</a>
 
 ---

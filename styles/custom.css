@@ -295,6 +295,27 @@ strong {
   font-size: 0.95em;
 }
 
+.conjecture {
+  border: 2px solid #ff6b35;
+  background-color: #fff8e1;
+  padding: 35px 15px 4px;
+  margin: 10px 0 2px;
+  position: relative;
+  border-radius: 8px;
+}
+
+.conjecture::before {
+  content: "Conjecture";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ff6b35;
+  color: white;
+  padding: 2px 8px;
+  font-size: 0.8em;
+  border-radius: 6px 0 8px 0;
+}
+
 /* QRコードを各ページの右上に固定表示 */
 .qr-code-fixed {
   position: fixed;
